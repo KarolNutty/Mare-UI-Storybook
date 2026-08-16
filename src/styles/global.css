@@ -1,0 +1,50 @@
+/**
+ * Base opcional. Importe se o app não tiver reset próprio:
+ *   import '@mare-ui/react/styles.css';
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--mare-color-bg-canvas);
+  color: var(--mare-color-fg-default);
+  font-family: var(--mare-font-body);
+  font-size: var(--mare-font-size-md);
+  line-height: var(--mare-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--mare-font-display);
+  letter-spacing: var(--mare-tracking-tight);
+  line-height: var(--mare-line-height-tight);
+  margin: 0;
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--mare-font-mono);
+  font-size: 0.9em;
+}
+
+/* Quem pediu menos movimento, recebe menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

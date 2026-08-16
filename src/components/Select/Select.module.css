@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  appearance: none;
+  padding-inline-end: 2rem;
+  cursor: pointer;
+}
+
+.select:disabled {
+  cursor: not-allowed;
+}
+
+.chevron {
+  position: absolute;
+  inset-inline-end: var(--mare-space-3);
+  display: flex;
+  color: var(--mare-color-fg-subtle);
+  pointer-events: none;
+}

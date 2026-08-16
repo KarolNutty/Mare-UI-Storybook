@@ -1,0 +1,88 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mare-space-3);
+  padding: var(--mare-space-3) var(--mare-space-4);
+  border: var(--mare-border-width-thin) solid;
+  border-radius: var(--mare-radius-md);
+  font-family: var(--mare-font-body);
+  font-size: var(--mare-font-size-sm);
+  line-height: var(--mare-line-height-snug);
+}
+
+.info {
+  background-color: var(--mare-color-info-bg-subtle);
+  border-color: var(--mare-color-info-border);
+  color: var(--mare-color-info-fg);
+}
+.success {
+  background-color: var(--mare-color-success-bg-subtle);
+  border-color: var(--mare-color-success-border);
+  color: var(--mare-color-success-fg);
+}
+.warning {
+  background-color: var(--mare-color-warning-bg-subtle);
+  border-color: var(--mare-color-warning-border);
+  color: var(--mare-color-warning-fg);
+}
+.danger {
+  background-color: var(--mare-color-danger-bg-subtle);
+  border-color: var(--mare-color-danger-border);
+  color: var(--mare-color-danger-fg);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 0.0625rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mare-space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: var(--mare-font-weight-semibold);
+}
+
+/* O corpo volta para a cor de texto normal: o tom colorido fica no título e no ícone,
+   senão o parágrafo inteiro compete por atenção e a leitura piora. */
+.description {
+  color: var(--mare-color-fg-default);
+}
+
+.actions {
+  display: flex;
+  gap: var(--mare-space-2);
+  margin-top: var(--mare-space-2);
+}
+
+.dismiss {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -0.125rem -0.25rem 0 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--mare-radius-sm);
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.dismiss:hover {
+  opacity: 1;
+  background-color: rgb(0 0 0 / 0.06);
+}
+
+.dismiss:focus-visible {
+  outline: none;
+  box-shadow: var(--mare-shadow-focus);
+  opacity: 1;
+}

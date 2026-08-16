@@ -1,0 +1,94 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mare-color-bg-surface);
+  border: var(--mare-border-width-thin) solid var(--mare-color-border-subtle);
+  border-radius: var(--mare-radius-lg);
+  color: var(--mare-color-fg-default);
+  font-family: var(--mare-font-body);
+  overflow: hidden;
+}
+
+.raised {
+  box-shadow: var(--mare-shadow-raised);
+  border-color: transparent;
+}
+
+.flat {
+  background-color: var(--mare-color-bg-subtle);
+  border-color: transparent;
+}
+
+.interactive {
+  cursor: pointer;
+  text-align: start;
+  transition:
+    border-color var(--mare-duration-fast) var(--mare-ease-standard),
+    box-shadow var(--mare-duration-fast) var(--mare-ease-standard),
+    transform var(--mare-duration-fast) var(--mare-ease-standard);
+}
+
+.interactive:hover {
+  border-color: var(--mare-color-border-default);
+  box-shadow: var(--mare-shadow-raised);
+  transform: translateY(-1px);
+}
+
+.interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--mare-shadow-focus);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--mare-space-4);
+  padding: var(--mare-space-5) var(--mare-space-5) 0;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mare-space-1);
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--mare-font-display);
+  font-size: var(--mare-font-size-lg);
+  font-weight: var(--mare-font-weight-semibold);
+  letter-spacing: var(--mare-tracking-tight);
+  line-height: var(--mare-line-height-tight);
+}
+
+.subtitle {
+  font-size: var(--mare-font-size-sm);
+  color: var(--mare-color-fg-muted);
+  line-height: var(--mare-line-height-snug);
+}
+
+.body {
+  padding: var(--mare-space-5);
+  font-size: var(--mare-font-size-sm);
+  line-height: var(--mare-line-height-normal);
+  color: var(--mare-color-fg-muted);
+}
+
+/* Quando o header existe, o corpo não repete o respiro de cima. */
+.header + .body {
+  padding-top: var(--mare-space-4);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--mare-space-2);
+  padding: var(--mare-space-4) var(--mare-space-5);
+  border-top: var(--mare-border-width-thin) solid var(--mare-color-border-subtle);
+  background-color: var(--mare-color-bg-canvas);
+}
+
+.footerEnd {
+  justify-content: flex-end;
+}

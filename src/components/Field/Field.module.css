@@ -1,0 +1,39 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mare-space-1-5, 0.375rem);
+  font-family: var(--mare-font-body);
+}
+
+.label {
+  font-size: var(--mare-font-size-sm);
+  font-weight: var(--mare-font-weight-medium);
+  color: var(--mare-color-fg-default);
+}
+
+.required {
+  margin-inline-start: var(--mare-space-1);
+  color: var(--mare-color-danger-fg);
+}
+
+.optional {
+  margin-inline-start: var(--mare-space-2);
+  font-weight: var(--mare-font-weight-regular);
+  font-size: var(--mare-font-size-xs);
+  color: var(--mare-color-fg-subtle);
+}
+
+.hint {
+  font-size: var(--mare-font-size-xs);
+  line-height: var(--mare-line-height-snug);
+  color: var(--mare-color-fg-muted);
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mare-space-1);
+  font-size: var(--mare-font-size-xs);
+  line-height: var(--mare-line-height-snug);
+  color: var(--mare-color-danger-fg);
+}

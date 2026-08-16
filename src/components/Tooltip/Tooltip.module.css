@@ -1,0 +1,48 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.bubble {
+  position: absolute;
+  z-index: var(--mare-z-tooltip);
+  max-width: 16rem;
+  padding: var(--mare-space-1-5) var(--mare-space-2);
+  background-color: var(--mare-color-bg-inverse);
+  border-radius: var(--mare-radius-sm);
+  color: var(--mare-color-fg-inverse);
+  font-family: var(--mare-font-body);
+  font-size: var(--mare-font-size-xs);
+  line-height: var(--mare-line-height-snug);
+  text-align: center;
+  white-space: normal;
+  pointer-events: none;
+  animation: appear var(--mare-duration-fast) var(--mare-ease-entrance);
+}
+
+.top {
+  bottom: calc(100% + var(--mare-space-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom {
+  top: calc(100% + var(--mare-space-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+.left {
+  right: calc(100% + var(--mare-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right {
+  left: calc(100% + var(--mare-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}

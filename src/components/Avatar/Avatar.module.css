@@ -1,0 +1,57 @@
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--avatar-size, 2.5rem);
+  height: var(--avatar-size, 2.5rem);
+  background-color: var(--mare-color-bg-muted);
+  border-radius: var(--mare-radius-full);
+  color: var(--mare-color-fg-muted);
+  font-family: var(--mare-font-display);
+  font-size: calc(var(--avatar-size, 2.5rem) * 0.38);
+  font-weight: var(--mare-font-weight-semibold);
+  letter-spacing: var(--mare-tracking-tight);
+  overflow: hidden;
+  user-select: none;
+}
+
+.xs {
+  --avatar-size: 1.5rem;
+}
+.sm {
+  --avatar-size: 2rem;
+}
+.md {
+  --avatar-size: 2.5rem;
+}
+.lg {
+  --avatar-size: 3rem;
+}
+.xl {
+  --avatar-size: 4rem;
+}
+
+.square {
+  border-radius: var(--mare-radius-md);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.group > * {
+  box-shadow: 0 0 0 2px var(--mare-color-bg-surface);
+}
+
+.group > *:not(:first-child) {
+  margin-inline-start: -0.5rem;
+}

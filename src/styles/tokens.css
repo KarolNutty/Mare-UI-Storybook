@@ -1,0 +1,291 @@
+/**
+ * Maré UI — tokens
+ *
+ * Duas camadas, de propósito:
+ *  1. Primitivos  (--mare-<escala>-<passo>)  valores brutos, nunca usados direto em componente.
+ *  2. Semânticos  (--mare-color-<papel>)     o que o componente consome. Trocar o tema troca só esta camada.
+ *
+ * Regra da casa: se um componente referencia um primitivo, o tema escuro quebra. Sempre semântico.
+ */
+
+:root {
+  /* ---------------------------------------------------------------- *
+   * 1. PRIMITIVOS — cor
+   * ---------------------------------------------------------------- */
+
+  /* Neutros, levemente puxados para o petróleo (não são cinzas puros) */
+  --mare-neutral-0: #ffffff;
+  --mare-neutral-50: #f6f8f8;
+  --mare-neutral-100: #edf1f2;
+  --mare-neutral-200: #dde4e6;
+  --mare-neutral-300: #c3ced1;
+  --mare-neutral-400: #9aa9ad;
+  --mare-neutral-500: #75868b;
+  --mare-neutral-600: #5a6b70;
+  --mare-neutral-700: #435257;
+  --mare-neutral-800: #2c393d;
+  --mare-neutral-900: #1b2528;
+  --mare-neutral-950: #0e1618;
+
+  /* Maré — a cor de marca. Petróleo de água funda. */
+  --mare-tide-50: #e6f4f5;
+  --mare-tide-100: #c4e6e8;
+  --mare-tide-200: #97d3d8;
+  --mare-tide-300: #63bbc3;
+  --mare-tide-400: #2f9aa5;
+  --mare-tide-500: #12727e;
+  --mare-tide-600: #0f626d;
+  --mare-tide-700: #0c4f58;
+  --mare-tide-800: #093c43;
+  --mare-tide-900: #06282d;
+
+  /* Sol — acento quente, usado com parcimônia (destaque e aviso) */
+  --mare-sun-50: #fff6e3;
+  --mare-sun-100: #fde9bc;
+  --mare-sun-200: #fbd888;
+  --mare-sun-300: #f7c450;
+  --mare-sun-400: #f2b441;
+  --mare-sun-500: #dc9a17;
+  --mare-sun-600: #b87d0f;
+  --mare-sun-700: #8e5f0c;
+  --mare-sun-800: #66430a;
+
+  /* Coral — erro e destruição */
+  --mare-coral-50: #fdecec;
+  --mare-coral-100: #f9d0d2;
+  --mare-coral-200: #f1a5a9;
+  --mare-coral-300: #e5747b;
+  --mare-coral-400: #d64550;
+  --mare-coral-500: #be313c;
+  --mare-coral-600: #9c2530;
+  --mare-coral-700: #761b23;
+
+  /* Mangue — sucesso */
+  --mare-mangue-50: #e8f7f0;
+  --mare-mangue-100: #c6ebda;
+  --mare-mangue-200: #93d8ba;
+  --mare-mangue-300: #5cbf95;
+  --mare-mangue-400: #35a576;
+  --mare-mangue-500: #2a8a62;
+  --mare-mangue-600: #21704f;
+  --mare-mangue-700: #18563c;
+
+  /* Calha — informação */
+  --mare-calha-50: #eaf1f8;
+  --mare-calha-100: #c8daec;
+  --mare-calha-200: #9bbcdc;
+  --mare-calha-300: #6a9bc8;
+  --mare-calha-400: #457fb2;
+  --mare-calha-500: #3b6fa0;
+  --mare-calha-600: #2f5a83;
+  --mare-calha-700: #244664;
+
+  /* ---------------------------------------------------------------- *
+   * 2. PRIMITIVOS — tipografia, espaço, forma, movimento
+   * ---------------------------------------------------------------- */
+
+  --mare-font-display: 'Archivo', 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --mare-font-body: 'Inter', 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mare-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --mare-font-size-2xs: 0.6875rem; /* 11 */
+  --mare-font-size-xs: 0.75rem; /* 12 */
+  --mare-font-size-sm: 0.8125rem; /* 13 */
+  --mare-font-size-md: 0.9375rem; /* 15 — corpo padrão */
+  --mare-font-size-lg: 1.0625rem; /* 17 */
+  --mare-font-size-xl: 1.25rem; /* 20 */
+  --mare-font-size-2xl: 1.5rem; /* 24 */
+  --mare-font-size-3xl: 2rem; /* 32 */
+  --mare-font-size-4xl: 2.75rem; /* 44 */
+
+  --mare-font-weight-regular: 400;
+  --mare-font-weight-medium: 500;
+  --mare-font-weight-semibold: 600;
+  --mare-font-weight-bold: 700;
+
+  --mare-line-height-tight: 1.15;
+  --mare-line-height-snug: 1.35;
+  --mare-line-height-normal: 1.55;
+  --mare-line-height-relaxed: 1.7;
+
+  --mare-tracking-tight: -0.02em;
+  --mare-tracking-normal: 0;
+  --mare-tracking-wide: 0.04em;
+
+  /* Escala de espaço em base 4 */
+  --mare-space-0: 0;
+  --mare-space-px: 1px;
+  --mare-space-0-5: 0.125rem; /* 2 */
+  --mare-space-1: 0.25rem; /* 4 */
+  --mare-space-1-5: 0.375rem; /* 6 */
+  --mare-space-2: 0.5rem; /* 8 */
+  --mare-space-3: 0.75rem; /* 12 */
+  --mare-space-4: 1rem; /* 16 */
+  --mare-space-5: 1.25rem; /* 20 */
+  --mare-space-6: 1.5rem; /* 24 */
+  --mare-space-8: 2rem; /* 32 */
+  --mare-space-10: 2.5rem; /* 40 */
+  --mare-space-12: 3rem; /* 48 */
+  --mare-space-16: 4rem; /* 64 */
+
+  --mare-radius-xs: 4px;
+  --mare-radius-sm: 6px;
+  --mare-radius-md: 10px;
+  --mare-radius-lg: 14px;
+  --mare-radius-xl: 20px;
+  --mare-radius-full: 999px;
+
+  --mare-border-width-thin: 1px;
+  --mare-border-width-thick: 2px;
+
+  --mare-duration-instant: 80ms;
+  --mare-duration-fast: 140ms;
+  --mare-duration-normal: 220ms;
+  --mare-duration-slow: 380ms;
+
+  --mare-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --mare-ease-entrance: cubic-bezier(0, 0, 0, 1);
+  --mare-ease-exit: cubic-bezier(0.3, 0, 1, 1);
+
+  --mare-z-base: 0;
+  --mare-z-sticky: 100;
+  --mare-z-overlay: 800;
+  --mare-z-modal: 900;
+  --mare-z-tooltip: 1000;
+
+  /* ---------------------------------------------------------------- *
+   * 3. SEMÂNTICOS — tema claro (padrão)
+   * ---------------------------------------------------------------- */
+
+  --mare-color-bg-canvas: var(--mare-neutral-50);
+  --mare-color-bg-surface: var(--mare-neutral-0);
+  --mare-color-bg-raised: var(--mare-neutral-0);
+  --mare-color-bg-subtle: var(--mare-neutral-100);
+  --mare-color-bg-muted: var(--mare-neutral-200);
+  --mare-color-bg-inverse: var(--mare-neutral-900);
+  --mare-color-bg-overlay: rgb(14 22 24 / 0.45);
+
+  --mare-color-fg-default: var(--mare-neutral-900);
+  --mare-color-fg-muted: var(--mare-neutral-600);
+  --mare-color-fg-subtle: var(--mare-neutral-500);
+  --mare-color-fg-disabled: var(--mare-neutral-400);
+  --mare-color-fg-inverse: var(--mare-neutral-50);
+  --mare-color-fg-on-accent: var(--mare-neutral-0);
+
+  --mare-color-border-subtle: var(--mare-neutral-200);
+  --mare-color-border-default: var(--mare-neutral-300);
+  --mare-color-border-strong: var(--mare-neutral-500);
+
+  --mare-color-accent-bg: var(--mare-tide-500);
+  --mare-color-accent-bg-hover: var(--mare-tide-600);
+  --mare-color-accent-bg-active: var(--mare-tide-700);
+  --mare-color-accent-bg-subtle: var(--mare-tide-50);
+  --mare-color-accent-border: var(--mare-tide-200);
+  --mare-color-accent-fg: var(--mare-tide-700);
+
+  --mare-color-danger-bg: var(--mare-coral-400);
+  --mare-color-danger-bg-hover: var(--mare-coral-500);
+  --mare-color-danger-bg-active: var(--mare-coral-600);
+  --mare-color-danger-bg-subtle: var(--mare-coral-50);
+  --mare-color-danger-border: var(--mare-coral-200);
+  --mare-color-danger-fg: var(--mare-coral-600);
+
+  --mare-color-success-bg: var(--mare-mangue-400);
+  --mare-color-success-bg-subtle: var(--mare-mangue-50);
+  --mare-color-success-border: var(--mare-mangue-200);
+  --mare-color-success-fg: var(--mare-mangue-600);
+
+  --mare-color-warning-bg: var(--mare-sun-400);
+  --mare-color-warning-bg-subtle: var(--mare-sun-50);
+  --mare-color-warning-border: var(--mare-sun-200);
+  --mare-color-warning-fg: var(--mare-sun-700);
+
+  --mare-color-info-bg: var(--mare-calha-500);
+  --mare-color-info-bg-subtle: var(--mare-calha-50);
+  --mare-color-info-border: var(--mare-calha-200);
+  --mare-color-info-fg: var(--mare-calha-600);
+
+  --mare-color-focus-ring: var(--mare-tide-400);
+
+  --mare-shadow-raised: 0 1px 2px rgb(14 22 24 / 0.06), 0 2px 8px rgb(14 22 24 / 0.06);
+  --mare-shadow-overlay:
+    0 8px 12px -4px rgb(14 22 24 / 0.12), 0 24px 48px -12px rgb(14 22 24 / 0.2);
+  --mare-shadow-focus:
+    0 0 0 2px var(--mare-color-bg-surface), 0 0 0 4px var(--mare-color-focus-ring);
+
+  /* A "linha de maré": único gradiente do sistema. Marca o que está ativo. */
+  --mare-gradient-tide: linear-gradient(90deg, var(--mare-tide-500) 0%, var(--mare-sun-400) 100%);
+}
+
+/* ------------------------------------------------------------------ *
+ * Tema escuro. Só a camada semântica muda.
+ * ------------------------------------------------------------------ */
+
+[data-theme='dark'] {
+  --mare-color-bg-canvas: var(--mare-neutral-950);
+  --mare-color-bg-surface: var(--mare-neutral-900);
+  --mare-color-bg-raised: var(--mare-neutral-800);
+  --mare-color-bg-subtle: var(--mare-neutral-800);
+  --mare-color-bg-muted: var(--mare-neutral-700);
+  --mare-color-bg-inverse: var(--mare-neutral-100);
+  --mare-color-bg-overlay: rgb(4 8 9 / 0.7);
+
+  --mare-color-fg-default: var(--mare-neutral-100);
+  --mare-color-fg-muted: var(--mare-neutral-400);
+  --mare-color-fg-subtle: var(--mare-neutral-500);
+  --mare-color-fg-disabled: var(--mare-neutral-600);
+  --mare-color-fg-inverse: var(--mare-neutral-900);
+  --mare-color-fg-on-accent: var(--mare-neutral-950);
+
+  --mare-color-border-subtle: var(--mare-neutral-800);
+  --mare-color-border-default: var(--mare-neutral-700);
+  --mare-color-border-strong: var(--mare-neutral-500);
+
+  /* No escuro a marca clareia: contraste sobre fundo funda, não sobre papel. */
+  --mare-color-accent-bg: var(--mare-tide-300);
+  --mare-color-accent-bg-hover: var(--mare-tide-200);
+  --mare-color-accent-bg-active: var(--mare-tide-100);
+  --mare-color-accent-bg-subtle: rgb(18 114 126 / 0.18);
+  --mare-color-accent-border: var(--mare-tide-700);
+  --mare-color-accent-fg: var(--mare-tide-200);
+
+  --mare-color-danger-bg: var(--mare-coral-300);
+  --mare-color-danger-bg-hover: var(--mare-coral-200);
+  --mare-color-danger-bg-active: var(--mare-coral-100);
+  --mare-color-danger-bg-subtle: rgb(190 49 60 / 0.2);
+  --mare-color-danger-border: var(--mare-coral-700);
+  --mare-color-danger-fg: var(--mare-coral-200);
+
+  --mare-color-success-bg: var(--mare-mangue-300);
+  --mare-color-success-bg-subtle: rgb(42 138 98 / 0.2);
+  --mare-color-success-border: var(--mare-mangue-700);
+  --mare-color-success-fg: var(--mare-mangue-200);
+
+  --mare-color-warning-bg: var(--mare-sun-300);
+  --mare-color-warning-bg-subtle: rgb(220 154 23 / 0.18);
+  --mare-color-warning-border: var(--mare-sun-700);
+  --mare-color-warning-fg: var(--mare-sun-200);
+
+  --mare-color-info-bg: var(--mare-calha-300);
+  --mare-color-info-bg-subtle: rgb(59 111 160 / 0.22);
+  --mare-color-info-border: var(--mare-calha-700);
+  --mare-color-info-fg: var(--mare-calha-200);
+
+  --mare-color-focus-ring: var(--mare-tide-300);
+
+  --mare-shadow-raised: 0 1px 2px rgb(0 0 0 / 0.4), 0 2px 8px rgb(0 0 0 / 0.3);
+  --mare-shadow-overlay: 0 8px 12px -4px rgb(0 0 0 / 0.5), 0 24px 48px -12px rgb(0 0 0 / 0.6);
+
+  --mare-gradient-tide: linear-gradient(90deg, var(--mare-tide-300) 0%, var(--mare-sun-300) 100%);
+}
+
+/* Quem escolhe "system" segue o SO. */
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] {
+    color-scheme: dark;
+  }
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}

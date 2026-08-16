@@ -1,0 +1,90 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.control {
+  --input-height: 2.25rem;
+  --input-padding-x: var(--mare-space-3);
+
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: var(--input-padding-x);
+  background-color: var(--mare-color-bg-surface);
+  border: var(--mare-border-width-thin) solid var(--mare-color-border-default);
+  border-radius: var(--mare-radius-md);
+  color: var(--mare-color-fg-default);
+  font-family: var(--mare-font-body);
+  font-size: var(--mare-font-size-sm);
+  transition:
+    border-color var(--mare-duration-fast) var(--mare-ease-standard),
+    box-shadow var(--mare-duration-fast) var(--mare-ease-standard);
+}
+
+.control::placeholder {
+  color: var(--mare-color-fg-subtle);
+}
+
+.control:hover:not(:disabled):not(:focus) {
+  border-color: var(--mare-color-border-strong);
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--mare-color-focus-ring);
+  box-shadow: var(--mare-shadow-focus);
+}
+
+.control:disabled {
+  background-color: var(--mare-color-bg-subtle);
+  color: var(--mare-color-fg-disabled);
+  cursor: not-allowed;
+}
+
+.control[aria-invalid='true'] {
+  border-color: var(--mare-color-danger-bg);
+}
+
+.control[aria-invalid='true']:focus {
+  box-shadow:
+    0 0 0 2px var(--mare-color-bg-surface),
+    0 0 0 4px var(--mare-color-danger-bg);
+}
+
+.sm {
+  --input-height: 1.875rem;
+  --input-padding-x: var(--mare-space-2);
+  font-size: var(--mare-font-size-xs);
+}
+
+.lg {
+  --input-height: 2.75rem;
+  font-size: var(--mare-font-size-md);
+}
+
+.withStart {
+  padding-inline-start: 2.25rem;
+}
+
+.withEnd {
+  padding-inline-end: 2.25rem;
+}
+
+.adornment {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  color: var(--mare-color-fg-subtle);
+  pointer-events: none;
+}
+
+.adornmentStart {
+  inset-inline-start: 0;
+}
+
+.adornmentEnd {
+  inset-inline-end: 0;
+}

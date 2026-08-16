@@ -1,0 +1,102 @@
+.root {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--mare-space-2);
+  font-family: var(--mare-font-body);
+  font-size: var(--mare-font-size-sm);
+  color: var(--mare-color-fg-default);
+  cursor: pointer;
+}
+
+.root[data-disabled='true'] {
+  color: var(--mare-color-fg-disabled);
+  cursor: not-allowed;
+}
+
+.box {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.0625rem;
+}
+
+/* O input real fica invisível mas continua sendo o alvo de foco e de clique. */
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mare-color-bg-surface);
+  border: var(--mare-border-width-thin) solid var(--mare-color-border-default);
+  border-radius: var(--mare-radius-xs);
+  color: var(--mare-color-fg-on-accent);
+  transition:
+    background-color var(--mare-duration-fast) var(--mare-ease-standard),
+    border-color var(--mare-duration-fast) var(--mare-ease-standard),
+    box-shadow var(--mare-duration-fast) var(--mare-ease-standard);
+  pointer-events: none;
+}
+
+.input:checked + .visual,
+.input:indeterminate + .visual {
+  background-color: var(--mare-color-accent-bg);
+  border-color: var(--mare-color-accent-bg);
+}
+
+.input:focus-visible + .visual {
+  box-shadow: var(--mare-shadow-focus);
+}
+
+.input:disabled + .visual {
+  background-color: var(--mare-color-bg-subtle);
+  border-color: var(--mare-color-border-subtle);
+}
+
+.input:disabled:checked + .visual,
+.input:disabled:indeterminate + .visual {
+  background-color: var(--mare-color-fg-disabled);
+  border-color: var(--mare-color-fg-disabled);
+}
+
+.mark {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--mare-duration-instant) var(--mare-ease-standard),
+    transform var(--mare-duration-fast) var(--mare-ease-entrance);
+}
+
+.input:checked + .visual .checkMark,
+.input:indeterminate + .visual .dashMark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.input:indeterminate + .visual .checkMark {
+  opacity: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mare-space-0-5);
+  line-height: var(--mare-line-height-snug);
+}
+
+.description {
+  font-size: var(--mare-font-size-xs);
+  color: var(--mare-color-fg-muted);
+}

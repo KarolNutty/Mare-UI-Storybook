@@ -1,0 +1,140 @@
+.base {
+  --button-height: 2.25rem;
+  --button-padding-x: var(--mare-space-4);
+  --button-font-size: var(--mare-font-size-sm);
+  --button-gap: var(--mare-space-2);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  height: var(--button-height);
+  padding-inline: var(--button-padding-x);
+  border: var(--mare-border-width-thin) solid transparent;
+  border-radius: var(--mare-radius-md);
+  font-family: var(--mare-font-body);
+  font-size: var(--button-font-size);
+  font-weight: var(--mare-font-weight-medium);
+  line-height: 1;
+  letter-spacing: var(--mare-tracking-normal);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--mare-duration-fast) var(--mare-ease-standard),
+    border-color var(--mare-duration-fast) var(--mare-ease-standard),
+    color var(--mare-duration-fast) var(--mare-ease-standard),
+    box-shadow var(--mare-duration-fast) var(--mare-ease-standard);
+}
+
+.base:focus-visible {
+  outline: none;
+  box-shadow: var(--mare-shadow-focus);
+}
+
+.base:disabled,
+.base[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ---- tamanhos ---- */
+.sm {
+  --button-height: 1.875rem;
+  --button-padding-x: var(--mare-space-3);
+  --button-font-size: var(--mare-font-size-xs);
+  --button-gap: var(--mare-space-1);
+}
+
+.lg {
+  --button-height: 2.75rem;
+  --button-padding-x: var(--mare-space-6);
+  --button-font-size: var(--mare-font-size-md);
+}
+
+/* ---- variantes ---- */
+.solid {
+  background-color: var(--mare-color-accent-bg);
+  color: var(--mare-color-fg-on-accent);
+}
+.solid:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--mare-color-accent-bg-hover);
+}
+.solid:active:not(:disabled) {
+  background-color: var(--mare-color-accent-bg-active);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--mare-color-border-default);
+  color: var(--mare-color-fg-default);
+}
+.outline:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--mare-color-bg-subtle);
+  border-color: var(--mare-color-border-strong);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--mare-color-fg-default);
+}
+.ghost:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--mare-color-bg-subtle);
+}
+
+.subtle {
+  background-color: var(--mare-color-accent-bg-subtle);
+  color: var(--mare-color-accent-fg);
+}
+.subtle:hover:not(:disabled):not([aria-disabled='true']) {
+  border-color: var(--mare-color-accent-border);
+}
+
+.danger {
+  background-color: var(--mare-color-danger-bg);
+  color: var(--mare-color-fg-on-accent);
+}
+.danger:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--mare-color-danger-bg-hover);
+}
+.danger:active:not(:disabled) {
+  background-color: var(--mare-color-danger-bg-active);
+}
+
+/* ---- modificadores ---- */
+.fullWidth {
+  width: 100%;
+}
+
+.iconOnly {
+  --button-padding-x: 0;
+  width: var(--button-height);
+}
+
+/* Durante o carregamento o rótulo fica transparente em vez de "hidden":
+   assim o botão não encolhe E o nome acessível continua sendo o rótulo.
+   visibility:hidden removeria o texto do cálculo do nome acessível. */
+.loading .label {
+  opacity: 0;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+}

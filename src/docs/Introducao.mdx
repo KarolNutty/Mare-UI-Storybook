@@ -1,0 +1,65 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Fundamentos/Introdução" />
+
+<div style={{ maxWidth: 720 }}>
+
+# Maré UI
+
+Design system em React + TypeScript. Tokens semânticos, tema claro/escuro, acessibilidade
+verificada por teste e documentação viva.
+
+O nome vem da costa: em Aracaju a maré manda no dia. A ideia aqui é parecida — os tokens
+mandam na interface, e todo o resto se ajusta.
+
+---
+
+## As três regras da casa
+
+**1. Componente não conhece cor.** Nenhum componente referencia `--mare-tide-500`. Todos
+consomem tokens semânticos como `--mare-color-accent-bg`. É por isso que o tema escuro é um
+bloco de CSS, e não uma reescrita.
+
+**2. Acessibilidade é teste, não intenção.** Foco visível, navegação por teclado, nome
+acessível e `aria-*` corretos são verificados na suíte. O `addon-a11y` roda o axe em cada
+story. Um dos testes do `Button` existe porque o spinner de loading estava roubando o nome
+acessível — hoje ele quebra se alguém repetir o erro.
+
+**3. Controlado e não-controlado, sempre os dois.** O hook `useControllableState` deixa
+`Switch` e `Tabs` funcionarem tanto para quem só quer jogar na tela quanto para quem tem
+form state. Sem duas APIs.
+
+---
+
+## Instalação
+
+```bash
+npm install @mare-ui/react
+```
+
+```tsx
+import { ThemeProvider, Button } from '@mare-ui/react';
+import '@mare-ui/react/styles.css';
+
+export function App() {
+  return (
+    <ThemeProvider defaultTheme="system">
+      <Button variant="solid">Começar</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+Só quer a paleta, sem os componentes React? `@mare-ui/react/tokens.css` traz apenas as
+variáveis CSS — serve para landing em HTML puro, e-mail ou um app em outro framework.
+
+---
+
+## Como navegar
+
+- **Fundamentos** — a paleta, a escala tipográfica e a régua de espaço. Troque o tema no
+  seletor da barra de cima: os valores mudam, os nomes não.
+- **Componentes** — cada um com sua tabela de props gerada a partir dos comentários do
+  TypeScript, e uma aba **Accessibility** com o resultado do axe.
+
+</div>

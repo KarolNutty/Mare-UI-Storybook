@@ -1,0 +1,45 @@
+.wrapper {
+  display: inline-flex;
+  color: currentColor;
+}
+
+.svg {
+  animation: spin 720ms linear infinite;
+}
+
+.track {
+  opacity: 0.25;
+}
+
+.head {
+  stroke-linecap: round;
+}
+
+.sm {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.md {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.lg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sem movimento: vira um anel estático, ainda legível como "em andamento". */
+@media (prefers-reduced-motion: reduce) {
+  .svg {
+    animation: none;
+  }
+  .head {
+    opacity: 0.85;
+  }
+}
